@@ -8,7 +8,7 @@ To reproduce the experiments:
 
 ## Get the requirements
 We used these standards:
-* [RU-SHIP](https://rules.dnvgl.com/ServiceDocuments/dnvgl/#!/industry/1/Maritime/1/DNV%20GL%20rules%20for%20classification:%20Ships%20(RU-SHIP) (openly available)
+* [RU-SHIP](https://rules.dnvgl.com/ServiceDocuments/dnvgl/#!/industry/1/Maritime/1/DNV%20GL%20rules%20for%20classification:%20Ships%20(RU-SHIP)) (openly available)
 * [ST-F101](https://oilgas.standards.dnvgl.com/download/dnvgl-st-f101-submarine-pipeline-systems) (subscription required)
 
 
