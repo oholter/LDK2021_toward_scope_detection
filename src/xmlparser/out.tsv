@@ -1,0 +1,91 @@
+sec	req	sent_num	sent
+2	2.3.3.1	2	For other locations local regulations shall apply.
+2	2.3.3.3	1	Spare Capacity  All power supplies shall have at least 30% spare capacity with the system fully equipped and at worst working condition.
+2	2.3.3.3	2	All 24 V DC distributions shall contain MCBs with necessary numbers of circuits (10% spare to be included).
+2	2.3.3.3	3	Input / Output cards and individual field instruments shall generally use fused power feeds.
+2	2.3.3.4	1	Other electrical sources Use of other electrical sources, e g  batteries for wireless instruments, shall be qualified for the application.
+5	5.3.2.1	1	Petroleum liquid process flow measurements Metering principles which shall be considered for petroleum liquid flow measurements are:  turbine  ultrasonic  coriolis  orifice plate  v-cone Other measurement principles may be considered in special cases such as for very high turndown requirements, liquids with high viscosity or measurements on very high or very low flow rates.
+5	5.3.2.2	1	Gas process flow measurements Metering principles which shall be considered for gas flow measurements are:  ultrasonic  orifice plate  v-cone  venturi In special cases (typically low flow rates) coriolis meters may also be considered.
+5	5.3.2.3	1	Water liquid process flow measurements Metering principles which shall be considered for water flow measurements are:  turbine  ultrasonic (clamp-on may be considered)  coriolis  electromagnetic  orifice  v-cone Other principles may be considered for special applications such as low flow or very dirty liquids.
+5	5.3.2.4	1	Chemical liquid flow measurements Metering principles which shall be considered for chemical injection liquid flow measurements are:  coriolis  positive displacement  turbine meters Other measurement principles may be considered in special cases.
+5	5.3.2.5	2	The metering principle shall be chosen in conjunction with the HVAC system Supplier.
+5	5.3.2.6	1	Steam Flow measurements Metering principles which shall be considered for steam flow measurements are:  Vortex  Orifice plate  Ultrasonic  Variable area  Annubar  Coriolis
+5	5.6.2.1	1	General Detector characteristics and calibration (pre-set sensitivity) shall ensure detection of a fire condition at an early stage.
+5	5.6.2.1	2	The detector shall be capable of operating under the conditions at the time that fire detection is needed.
+5	5.6.2.1	4	Maximum response time of the fire detection function shall be evaluated and defined according to safety criticality.
+5	5.6.2.2	1	Flame detectors Where flame is predominating and according to flame wave radiation characteristic, flame detectors shall be of the multispectrum IR, or combination UV/IR, type.
+5	5.6.2.2	3	The sensitivity setting of the flame detector shall be determined according to distance from detector to fire object.
+5	5.6.2.2	4	Low sensitivity setting shall not be used.
+5	5.6.2.4	3	Smoke detectors shall not be sensitive to water vapour.
+5	5.6.2.4	5	Early warning sensors shall have higher sensitivity (0.4 % to 0.8 % light obscuring per metre) than the normal recommendation.
+5	5.8.1.1	1	Sand detectors and erosion probes  As a minimum the acoustic sand detectors shall have possibilities for filtering of acoustic noise from other sources than the sand production.
+5	5.8.1.1	3	Provision shall be made for online calibration of sand detectors via sand injection upstream of detectors.
+5	5.8.1.1	4	Increasing erosion readings shall not be caused by mechanical failures or impacts.
+5	5.8.3.1	2	To ensure that the sample under analysis is representative for the property to be measured and at conditions suited for the correct operation of the analyser, a careful study of the overall sampling system shall be carried out.
+5	5.8.3.1	3	The study shall include recommendations as specified by the analyser Supplier.
+5	5.8.3.2	1	Sample Tapping Samples that are taken from the process stream shall have the same composition as the average composition of the process over the whole cross section of the pipeline, at the location and time of sampling.
+5	5.8.3.2	6	For projects in North-America the requirements for sample tapping shall follow the recommendations in API MPMS Ch 14.1 for Natural Gas and API MPMS Ch 8.2 for liquid applications.
+5	5.8.3.2	7	Inline analyzers shall be installed/positioned according to the same requirements as sample probes.
+5	5.8.3.2	8	An ASTM type nozzle shall be used for obtaining steam samples and may be used for liquids.
+5	5.8.3.2	13	Lines that are operating at or near the gas stream dewpoint shall have a special probe designed to overcome the problems of condensation and liquid.
+5	5.8.3.2	14	Where required, sample take-off and return probes shall be included.
+5	5.8.3.2	16	Each sample probe shall be fitted with a set of double block and bleed isolation valves.
+5	5.8.3.2	17	The design of the probe shall take into account the possibility of resonant vibration being induced in the probe by high flow velocities in the pipeline.
+5	5.8.3.2	18	Sampling devices shall not be installed in horizontal pipelines where contaminants are likely to be in suspension.
+5	5.8.3.2	19	Mixing equipment shall be considered for installation upstream of the sampling probe, whenever required in order to achieve a representative sample.
+5	5.8.3.3	1	Manual sample point for laboratory Provision for manual sampling shall be accommodated, where required for back-up and calibration of online analysers.
+5	5.8.3.3	2	This manual sample point shall be located as close as possible to the sample point for the online analyser.
+5	5.8.3.3	4	 All sample connections shall be fitted with a ball valve and a needle valve for tapping.
+5	5.8.3.3	5	 Sample point shall be located for easy access.
+5	5.8.3.3	6	 The sample excess shall be returned to the process, drain, vent or to the fuel system/flare.
+5	5.8.3.4	1	Sample Transport Line Representativity shall persist throughout the period of transfer of the batch.
+5	5.8.3.4	2	The sample shall be maintained in the same condition as at the point of extraction without loss of liquid, solids or gases and without contamination.
+5	5.8.3.4	3	Sampling lines shall be as short as possible.
+5	5.8.3.4	4	Sample volumes shall be kept to a minimum.
+5	5.8.3.4	5	Time lag calculations shall be prepared and documented for each installation / stream.
+5	5.8.3.4	6	The transport time through the sample handling system shall be less than 2 minutes (i e  to assure that a fresh sample is always analysed, to avoid "memory" effects).
+5	5.8.3.4	7	The sample transport system shall be designed to convey the fluid to the analyser from the sample tap with the minimum of time lag (isokinetic flow).
+5	5.8.3.4	8	Tubing and fittings used in the system shall not absorb components from the gas and thereby affecting the analysis result.
+5	5.8.3.4	10	Tubing and fittings used in systems for measurement of H2S shall be chemically treated (e g  silicated) in order to avoid absorbsion or emission of H2S.
+5	5.8.3.4	11	Tubing and fittings used for carrier gas shall also be chemically treated (e g  silicated) in order to avoid affecting the measurement.
+5	5.8.3.4	13	Double piping from the probe to the analyser shall be considered for cleaning purposes when the sample is expected to be contaminated.
+5	5.8.3.4	14	If the sample contains slurries, then a cleaning facility downstream shall be considered.
+5	5.8.3.4	15	The connections and change over valves shall be primarily mounted on ground level or be accessible from accessible platforms.
+5	5.8.3.4	16	Transmitters for flow, pressure and temperature and check-valves shall be used as necessary, to ensure that sample flow is adequate (isokinetic) and in the proper direction.
+5	5.8.3.5	3	As a general rule, all sampling systems shall contain suitable filters.
+5	5.8.3.5	4	Self-cleaning bypass type filters shall be used.
+5	5.8.3.5	5	Conditioning may be required for the removal of dirt particles, liquid/gas entrainment, corrosive agents, etc  Special consideration shall be given to vapour samples containing a large proportion of steam or other components which needs to be condensed and removed before analysis.
+6	6.4.2.1	1	General  All actuators shall be designed and dimensioned to operate the valves under the worst case process conditions.
+6	6.4.2.1	2	Actuator performance design shall be carried out with consideration of the overall valve response requirement.
+6	6.4.2.1	3	The specified closing/opening time shall be independent of the process condition.
+6	6.4.2.1	4	The safety margin stated for the valve application shall apply at any position of the valve stroke, and shall include the end position of the spring stroke for fail safe operations.
+6	6.4.2.1	5	Actuators for safety valves shall generally be either electrical, pneumatic or hydraulic single acting with spring return.
+6	6.4.2.1	6	Where valve/actuator service exceeds the spring return design, hydraulic double acting actuator with accumulator shall be utilized.
+6	6.4.2.1	7	The main selection criteria between these alternatives shall be LCC (Life Cycle Cost) including capital cost and normal maintenance costs, plus local availability of the type of energy supply.
+6	6.4.2.1	8	Operational wear, weight and dimensions shall also be considered, and shall be decisive for the selection where such factors are paramount.
+6	6.4.2.1	9	Access and serviceability shall also be considered for final selection between equally good alternatives.
+6	6.4.2.1	10	Electric actuators shall be preferred for on-off valves without fail safe action, (PCS designation), if such actuation can be provided with the required speed of operation, and in accordance with safety restrictions.
+6	6.4.2.1	11	The nominal supply voltage shall be used for calculating torque/thrust on electrical actuators.
+6	6.4.2.1	12	Double acting pneumatic actuators shall be avoided.
+6	6.4.2.1	13	Pneumatic/hydraulic actuators shall be fitted with flushing/bleeding facilities.
+6	6.4.2.2	1	Additional electrical actuator requirements Electrical actuators used on safety valves shall either be well proven industrial types electrical actuators with spring return or electro-hydraulic double-acting.
+6	6.4.2.2	6	Operation of electrical actuated valves and the effects of transients and changes in power supplies during special operations like start-up of large equipment shall be evaluated.
+6	6.4.2.3	1	Actuator Control Circuits Type of circuit design shall be decided by the Purchaser.
+6	6.4.2.3	3	The control circuits shall be designed for easy maintenance at location.
+6	6.4.2.3	4	All accessories required for control of the actuator movement, such as hydraulic inlet filter, solenoid valves, manual valves, pressure gauges etc  shall be mounted on a control panel.
+6	6.4.2.3	6	Control panels for the different circuit types shall be standardised in size, layout and mounting arrangement.
+6	6.4.2.3	7	Valve control panels for on/off valves shall preferably be mounted on separate stands and not directly on actuator.
+6	6.4.2.3	8	Devices for control of the speed in both directions shall be installed on the control unit.
+6	6.4.2.3	9	It shall not be possible to fully close the restrictors.
+6	6.4.2.3	10	The restrictors shall be easy to adjust during operation and shall have a fool proof locking device.
+6	6.4.2.3	11	Pressure gauges shall indicate the internal pressures in the control unit.
+6	6.4.2.3	12	Constant internal leakage shall not be designed into a control system, especially solenoid- and hydraulic/pneumatic valves.
+6	6.4.2.3	13	Filter units to be used shall have a differential pressure indication.
+6	6.4.2.3	14	The accumulators and their protection devices shall be assembled as a part of the control circuit panel, to form a composite unit, but they may also be required as independent units, depending on the space available in the plant.
+6	6.4.2.3	16	Direct access for calibration and maintenance of all instruments shall be provided.
+6	6.4.2.3	17	It shall be possible to remove individual components without having to remove inter-connected components.
+6	6.4.2.3	18	Hydraulic oil inlet and outlet ports shall be clearly marked "Oil Inlet" and "Oil Outlet", both on control panel and actuator.
+6	6.4.2.3	19	Isolation valves for supply and return lines shall be installed as close to the instrument as possible.
+6	6.4.2.3	20	Final layout arrangements proposed shall be confirmed and agreed by Purchaser upon fabrication.
+6	6.4.2.3	21	Oil-mist lubrication systems shall not be used unless required for special applications (gear motors etc ).
+6	6.4.2.3	22	A check valve shall be included on hydraulic circuit supply lines and pneumatic supply line.
