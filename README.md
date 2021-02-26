@@ -4,7 +4,7 @@ The tools used in the *toward scope detection in textual requirements* (will be)
 To reproduce the experiments:
 
 ## Install the libraries in the requirements.txt-file
-(pip install -r requirements.txt)
+``pip install -r requirements.txt``
 
 ## Get the requirements
 We used these standards:
@@ -29,7 +29,7 @@ We used these standards:
 ## Create gazetteers
 ### Create the Termostat lists
 1. Input the document into the [online termostat tool](http://termostat.ling.umontreal.ca/) and get the list of all the terms
-2. Run src/wn.py (change the path in read-csv)
+2. Run ``src/wn.py`` (change the path in read-csv)
 3. Copy the list to a text-file
 
 ### Create the ISO 15926
@@ -54,4 +54,4 @@ will train a model using 10 epochs on data.tsv and evaluate with gold.tsv, save 
 
 
 ## Evaluate the model
-Run ``src/bert_classifier/bert_eval.py``. Uses command line arguments --model and --test.
+Run ``src/bert_classifier/bert_eval.py``. Uses command line arguments ``--model and --test``.
