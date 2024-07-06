@@ -47,23 +47,28 @@ Use *python 3.7.15*
 
 
 ## Extract sentences from XML
-* Change variables in main function:
-    * path = the path of your XML-file
-    * tsv_path = the path of the output tsv-file
-    * extract sentences from the level you want in the document (uncomment the)
-* Run the script:
+
+### Change variables
+Change variables in main function in ``src/xmlparser/parsexml.py``
+
+* path = the path of your XML-file
+* tsv_path = the path of the output tsv-file
+* extract sentences from the level you want in the document (uncomment the)
+
+* Run the python file:
 
 ``python -m src.xmlparser.parsexml``
 
 
 ## Create gazetteers
+
 ### Create the Termostat lists
-1. Input the document into the [online termostat tool](http://termostat.ling.umontreal.ca/) and get the list of all the terms
-2. Run ``python -m src.wn`` (change the path in read-csv)
-3. Copy the list to a text-file
+Transform the PDF document into a .txt document. This can be done, for example, with the ``pdftotext`` tool in Linux.
+1. Input the text document into the [online termostat tool](http://termostat.ling.umontreal.ca/) and get the list of all the terms
+2. Run ``python -m src.wn`` (change the input/output paths in ``src/wn.py``)
 
 ### Create the ISO 15926
-1. Run ``15926.py`` twice (once for each of the Artefact URIs) and collect the results
+1. Run ``python -m src.15926`` twice (once for each of the Artefact URIs) and collect the results
 2. The list with Artefact CLASS must be curated according to the paper
 
 ### Create the list from word embeddings

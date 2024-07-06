@@ -4,3 +4,5 @@ xml/*
 tsv/*
 *.swp
 src/req_extract/target/*
+src/__pycache__/*
+src/xmlparser/__pycache__/*
