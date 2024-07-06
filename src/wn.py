@@ -40,18 +40,17 @@ class object_chekcer:
 if __name__ == "__main__":
     checker = object_chekcer()
 
+
     #gazetteer = read_gazetteer("/home/ole/src/scope_detection/terms.txt")
-    gazetteer = pd.read_csv("/home/ole/src/scope_detection/terms_from_termostat.txt", encoding='latin1', sep=',')
+    gazetteer = pd.read_csv("data/termostat_res.txt", encoding='latin1', sep='\t')
     #print(gazetteer['Candidate'])
     num_terms = 0
-    for i, term in enumerate(gazetteer['Candidate']):
-        isobject = checker.is_object(term)
-        if isobject:
-            num_terms += 1
-            print(term)
+    with open("data/wn_list.txt", mode='w') as F:
+        for i, term in enumerate(gazetteer['Candidate (grouping variant)']):
+            isobject = checker.is_object(term)
+            if isobject:
+                num_terms += 1
+                #print(term)
+                F.write(term + "\n")
 
     print("number of items: {}".format(num_terms))
-    #exit(0)
-
-
-
