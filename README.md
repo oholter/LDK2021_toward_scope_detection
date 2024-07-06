@@ -1,23 +1,15 @@
 # LDK2021_toward_scope_detection in textual requirements
-The tools used in the *toward scope detection in textual requirements* presented at LDK2021
+The tools used in the *toward scope detection in textual requirements* presented at LDK2021.
 
 To reproduce the experiments:
 
-## Setup environment
-### Create and activate a virtual environment
-``python -m venv venv``
 
-``source venv/bin/activate``
 
-### Install libraries
-``python -m pip install -r requirements.txt``
-
-## Get the requirements
+## Get the documents
 As of June 2024, the documents used in the paper can be downloaded from DNV at https://www.veracity.com/.
 We used these standards:
 * RU-SHIP
 * ST-F101
-
 
 ## Extract PDF to XML
 ### Change variables in the main function in ``src/req_extract/src/main/java/req_extract/PDFParser.java``
@@ -34,6 +26,21 @@ We used these standards:
 ``mvn clean compile exec:java``
 
 4. Confirm that the XML file is a valid XML. Note: You may have to manually correct mistakes in the XML file.
+
+
+
+
+## Setup python environment
+
+### Create and activate a virtual environment
+Use *python 3.7.15*
+
+``python -m venv venv``
+
+``source venv/bin/activate``
+
+### Install libraries
+``python -m pip install -r requirements.txt``
 
 
 ## Extract sentences from XML

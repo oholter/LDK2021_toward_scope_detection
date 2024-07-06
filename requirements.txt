@@ -12,6 +12,5 @@ SPARQLWrapper==1.8.5
 nltk==3.4.4
 gensim==3.8.3
 snorkel==0.9.5
-python==3.7.9
 matplotlib==3.3.3
 disagree==1.2.3
