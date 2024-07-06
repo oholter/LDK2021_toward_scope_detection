@@ -317,10 +317,10 @@ public class PDFParser {
 		 * 	* If the document has sub2-level (req on 2.2.2.2) or sub1-level (req on 2.2.2)
 		 */
 
-		String pdfPath = "/../data/DNVGL-ST-F101.pdf";
+		String pdfPath = "../../data/DNVGL-ST-F101.pdf";
 		//String pdfPath = "/path/to/DNVGL-RU-SHIP.pdf";
 
-		String outPath = "../xml/DNVGL-ST-F101.xml";
+		String outPath = "../../xml/DNVGL-ST-F101.xml";
 
 		int lastPage = 319;
 		PDFParser parser = new PDFParser(pdfPath, outPath);
