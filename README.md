@@ -6,6 +6,7 @@ To reproduce the experiments:
 ## Setup environment
 ### Create and activate a virtual environment
 ``python -m venv venv``
+
 ``source venv/bin/activate``
 
 ### Install libraries
@@ -28,8 +29,10 @@ We used these standards:
 1. Install java and maven
 2. Enter the pdf_parser folder
 ``cd src/req_extract``
+
 3. Compile and execute
 ``mvn clean compile exec:java``
+
 4. Confirm that the XML file is a valid XML. Note: You may have to manually correct mistakes in the XML file.
 
 
@@ -38,7 +41,9 @@ We used these standards:
     * path = the path of your XML-file
     * tsv_path = the path of the output tsv-file
     * extract sentences from the level you want in the document (uncomment the)
-* Run the script ``python -m src.xmlparser.parsexml``
+* Run the script:
+
+``python -m src.xmlparser.parsexml``
 
 
 ## Create gazetteers
@@ -57,6 +62,7 @@ We used these standards:
 
 ## Create labelled data
 Run ``python -m src.snorkel_if_scope.labelling_functions``
+
 1. check that the paths to the gazetteers in the beginning of the file are correct
 2. check gold_path and requirements_path after ``if __name__`` ...
 3. output filename is hardcoded toward the end of the file
@@ -64,9 +70,10 @@ Run ``python -m src.snorkel_if_scope.labelling_functions``
 
 ## Train Bert-model
 Run ``python -m src.bert_classifier.bert_train``. Uses command line arguments.
+
 Example ``python -m src.bert_classifier.bert_train -e 10 --train /src/data.tsv --gold /src/gold.tsv --save model.bin --lr 3e-5 --full_finetuning --eps 1e-8``
 will train a model using 10 epochs on data.tsv and evaluate with gold.tsv, save the model to model.bin, use a learning rate of 3e-5 and eps of 1e-8 and do fine-tuning on the bert-embeddings.
 
 
 ## Evaluate the model
-Run ``python -m src.bert_classifier.bert_eval``. Uses command line arguments ``--model and --test``.
+Run ``python -m src.bert_classifier.bert_eval``. Use command line arguments ``--model and --test``.
