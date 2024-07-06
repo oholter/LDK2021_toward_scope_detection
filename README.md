@@ -15,9 +15,10 @@ We used these standards:
 
 ### Change variables
 Change the variables in the main function in ``src/req_extract/src/main/java/req_extract/PDFParser.java``
-    * pdfPath = the path of your pdf-file
-    * outPath = path where you want the XML-file
-    * lastPage = last page number in document you want to read (or last page of the document)
+
+* pdfPath = the path of your pdf-file
+* outPath = path where you want the XML-file
+* lastPage = last page number in document you want to read (or last page of the document)
 
 ### Compile and run the java code:
 1. Install java and maven
