@@ -104,8 +104,8 @@ def print_sub(subs, filter_shall=False):
 
 
 if __name__ == "__main__":
-    path = "xml/DNVGL-RU-FD.xml"
-    tsv_path = "tsv/DNVGL-RU-FD.tsv"
+    path = "xml/DNVGL-ST-F101.xml"
+    tsv_path = "tsv/DNVGL-ST-F101.tsv"
 
     DOMTree = xml.dom.minidom.parse(path)
     collection = DOMTree.documentElement
@@ -119,9 +119,9 @@ if __name__ == "__main__":
     sec = collection.getElementsByTagName("section")
 
 
-    #print_reqs(requirements, file=tsv_path, filter_shall=True)
+    print_reqs(requirements, file=tsv_path, filter_shall=True)
     #print_sub(sub1, filter_shall=True)
-    print_sub(part, filter_shall=True)
+    #print_sub(part, filter_shall=True)
 
     # not always used on ru-ship
     #print_sub(sub2, filter_shall=True)
