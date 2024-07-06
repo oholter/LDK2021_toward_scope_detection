@@ -46,6 +46,7 @@ if __name__ == "__main__":
     #print(gazetteer['Candidate'])
     num_terms = 0
     with open("data/wn_list.txt", mode='w') as F:
+        F.write("Candidate\n")
         for i, term in enumerate(gazetteer['Candidate (grouping variant)']):
             isobject = checker.is_object(term)
             if isobject:

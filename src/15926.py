@@ -37,11 +37,12 @@ def query2():
     """
     sparql = SPARQLWrapper("http://192.236.179.169/sparql")
     #    ?concept rdfs:subClassOf+ <http://data.15926.org/rdl/RDS201644> ;
+    #    ?concept rdfs:subClassOf+ <http://data.15926.org/rdl/RDS422594> ;
     query2 = """
     SELECT distinct ?concept ?label
     WHERE
     {
-         ?concept rdfs:subClassOf+ <http://data.15926.org/rdl/RDS422594> ;
+            ?concept rdfs:subClassOf+ <http://data.15926.org/rdl/RDS422594> ;
             rdfs:label ?label .
     }
     """
@@ -93,4 +94,5 @@ def write_results(file, results_df):
 
 if __name__ == "__main__":
     results_df = query2()
-    write_results("../15926.txt", results_df)
+    write_results("15926.txt", results_df)
+    print("Written result to 15926.txt")

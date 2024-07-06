@@ -6,3 +6,4 @@ tsv/*
 src/req_extract/target/*
 src/__pycache__/*
 src/xmlparser/__pycache__/*
+src/snorkel_if_scope/__pycache__/*

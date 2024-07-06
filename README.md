@@ -45,6 +45,7 @@ Use *python 3.7.15*
 ### Install libraries
 ``python -m pip install -r requirements.txt``
 
+``python -m spacy download en_core_web_sm``
 
 ## Extract sentences from XML
 
@@ -76,6 +77,7 @@ Transform the PDF document into a .txt document. This can be done, for example, 
 2. The list with Artefact CLASS must be curated according to the paper
 
 ### Create the list from word embeddings
+
 * Run ``python -m src.vector_simil``
 
 
