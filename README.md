@@ -1,35 +1,50 @@
 # LDK2021_toward_scope_detection in textual requirements
-The tools used in the *toward scope detection in textual requirements* (will be) submitted to LDK2021
+The tools used in the *toward scope detection in textual requirements* presented at LDK2021
 
 To reproduce the experiments:
 
-## Install the libraries in the requirements.txt-file
-``pip install -r requirements.txt``
+## Setup environment
+### Create and activate a virtual environment
+``python -m venv venv``
+``source venv/bin/activate``
+
+### Install libraries
+``python -m pip install -r requirements.txt``
 
 ## Get the requirements
+As of June 2024, the documents used in the paper can be downloaded from DNV at https://www.veracity.com/.
 We used these standards:
-* [RU-SHIP](https://rules.dnvgl.com/ServiceDocuments/dnvgl/#!/industry/1/Maritime/1/DNV%20GL%20rules%20for%20classification:%20Ships%20(RU-SHIP)) (openly available)
-* [ST-F101](https://oilgas.standards.dnvgl.com/download/dnvgl-st-f101-submarine-pipeline-systems) (subscription required)
+* RU-SHIP
+* ST-F101
 
 
-## Extract pdf to xml
-* Run ``src/req_extract/src/main/java/req_extract/PDFParser.java`` (e.g., open the project in eclipse and add maven dependencies it depends on Apache PDFbox)
-* change variables in main function:
+## Extract PDF to XML
+### Change variables in the main function in ``src/req_extract/src/main/java/req_extract/PDFParser.java``
     * pdfPath = the path of your pdf-file
     * outPath = path where you want the XML-file
     * lastPage = last page number in document you want to read (or last page of the document)
 
+### Compile and run the java code:
+1. Install java and maven
+2. Enter the pdf_parser folder
+``cd src/req_extract``
+3. Compile and execute
+``mvn clean compile exec:java``
+4. Confirm that the XML file is a valid XML. Note: You may have to manually correct mistakes in the XML file.
+
+
 ## Extract sentences from XML
-* Run ``src/xmlparser/parsexml.py``
 * Change variables in main function:
     * path = the path of your XML-file
     * tsv_path = the path of the output tsv-file
     * extract sentences from the level you want in the document (uncomment the)
+* Run the script ``python -m src.xmlparser.parsexml``
+
 
 ## Create gazetteers
 ### Create the Termostat lists
 1. Input the document into the [online termostat tool](http://termostat.ling.umontreal.ca/) and get the list of all the terms
-2. Run ``src/wn.py`` (change the path in read-csv)
+2. Run ``python -m src.wn`` (change the path in read-csv)
 3. Copy the list to a text-file
 
 ### Create the ISO 15926
@@ -37,21 +52,21 @@ We used these standards:
 2. The list with Artefact CLASS must be curated according to the paper
 
 ### Create the list from word embeddings
-* Run ``src/vector_simil.py``
+* Run ``python -m src.vector_simil``
 
 
 ## Create labelled data
-Run ``src/snorkel_if_scope/labelling_functions.py``
+Run ``python -m src.snorkel_if_scope.labelling_functions``
 1. check that the paths to the gazetteers in the beginning of the file are correct
 2. check gold_path and requirements_path after ``if __name__`` ...
 3. output filename is hardcoded toward the end of the file
 
 
 ## Train Bert-model
-Run ``src/bert_classifier/bert_train.py``. Uses command line arguments.
-Example ``python -e 10 --train /src/data.tsv --gold /src/gold.tsv --save model.bin --lr 3e-5 --full_finetuning --eps 1e-8``
+Run ``python -m src.bert_classifier.bert_train``. Uses command line arguments.
+Example ``python -m src.bert_classifier.bert_train -e 10 --train /src/data.tsv --gold /src/gold.tsv --save model.bin --lr 3e-5 --full_finetuning --eps 1e-8``
 will train a model using 10 epochs on data.tsv and evaluate with gold.tsv, save the model to model.bin, use a learning rate of 3e-5 and eps of 1e-8 and do fine-tuning on the bert-embeddings.
 
 
 ## Evaluate the model
-Run ``src/bert_classifier/bert_eval.py``. Uses command line arguments ``--model and --test``.
+Run ``python -m src.bert_classifier.bert_eval``. Uses command line arguments ``--model and --test``.
