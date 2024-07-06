@@ -60,6 +60,7 @@ Change variables in main function in ``src/xmlparser/parsexml.py``
 
 ``python -m src.xmlparser.parsexml``
 
+Note: You need manually labelled data evaluate the labelling functions and for the final evaluation.
 
 ## Create gazetteers
 

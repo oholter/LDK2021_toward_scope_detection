@@ -18,66 +18,16 @@ from snorkel.utils import probs_to_preds
 from sklearn.metrics import classification_report
 
 
-gazetteer_path = "/home/ole/src/scope_detection/equipment_without_physical_quanitity.txt"
-iso15926_gazetteer_path = "/home/ole/src/scope_detection/15926_all.txt"
-ontology_graph_path = "/home/ole/src/scope_detection/req_onto/subsea_req.ttl"
-filtered_termostat_gazetteer_path = "/home/ole/src/scope_detection/terms.txt"
-wv_gazetteer_path = "/home/ole/src/scope_detection/terms_wv.txt"
+iso15926_gazetteer_path = "data/15926_all.txt"
+filtered_termostat_gazetteer_path = "data/wn_list.txt"
+wv_gazetteer_path = "data/terms_wv.txt"
 
 
-gazetteer = read_gazetteer(gazetteer_path)
+#gazetteer = read_gazetteer(gazetteer_path)
 iso15926_gazetteer = read_gazetteer(iso15926_gazetteer_path)
-graph = read_ontology_graph(ontology_graph_path)
+#graph = read_ontology_graph(ontology_graph_path)
 termostat_gazetteer = read_gazetteer(filtered_termostat_gazetteer_path)
 wv_gazetteer = read_gazetteer(wv_gazetteer_path)
-
-
-@labeling_function()
-def has_equipment_wikidata(x):
-    req = x.sent
-    spdoc = SpacyDoc.get_instance()
-    doc = spdoc.get_doc(req)
-    stopwords = spdoc.get_stopwords()
-
-    for i, chunk in enumerate(doc.noun_chunks):
-        tokens = chunk.text.lower().split(" ")
-        tokens_without_stopwords = [lemmatize_word(token) for token in tokens if token not in stopwords]
-        while tokens_without_stopwords:
-            label = contains_chunk(tokens_without_stopwords, gazetteer)
-            if label == SCOPE:
-                #print(chunk)
-                return SCOPE
-            tokens_without_stopwords.pop(0)
-    return ABSTAIN
-
-
-@labeling_function()
-def has_equipment_onto(x):
-    req = x.sent
-    # bigrams = list(ngrams(tokens, 2))
-    spdoc = SpacyDoc.get_instance()
-    doc = spdoc.get_doc(req)
-    stopwords = spdoc.get_stopwords()
-    # print(list(doc.noun_chunks))
-
-    found = False
-    for i, chunk in enumerate(doc.noun_chunks):
-        tokens = chunk.text.split(" ")
-        tokens_without_stopwords = [lemmatize_word(token) for token in tokens if token not in stopwords]
-        while tokens_without_stopwords:
-            words = " ".join(tokens_without_stopwords)
-            type = onto_subclass_of(words, graph)
-            if type == 'equipment' or type == 'subunit':
-                return SCOPE
-            elif type:
-                found = True
-            tokens_without_stopwords.pop(0)
-    if found:
-        pass
-        #return NOT_SCOPE
-    return ABSTAIN
-    #return NOT_SCOPE
-
 
 @labeling_function()
 def has_equipment_iso15926(x):
@@ -312,8 +262,8 @@ if __name__ == "__main__":
     pd.set_option('display.max_colwidth', -1)
 
     #requirements_path = "/home/ole/src/scope_detection/requirements.txt"
-    gold_path = "/home/ole/src/scope_detection/data/gold_data/all_samples_gold.tsv"
-    requirements_path = "/home/ole/src/scope_detection/data/raw_text/all_samples_removed.tsv"
+    gold_path = "tsv/all_samples_gold.tsv"
+    requirements_path = "tsv/all_samples_removed.tsv"
 
 
     df = read_requirements(requirements_path)
@@ -324,9 +274,7 @@ if __name__ == "__main__":
     Y_test = df_test.label.values
 
 
-    lfs = [ #has_equipment_wikidata, # no improvement in performance
-            #has_equipment_onto, # also no improvement in performance
-            has_equipment_termostat,
+    lfs = [ has_equipment_termostat,
             has_equipment_iso15926,
             has_equipment_wv,
             contains_colon,

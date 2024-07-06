@@ -7,3 +7,5 @@ src/req_extract/target/*
 src/__pycache__/*
 src/xmlparser/__pycache__/*
 src/snorkel_if_scope/__pycache__/*
+src/bert_classifier/__pycache__/*
+cache/*
