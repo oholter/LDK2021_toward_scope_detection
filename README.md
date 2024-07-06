@@ -68,7 +68,11 @@ Transform the PDF document into a .txt document. This can be done, for example, 
 2. Run ``python -m src.wn`` (change the input/output paths in ``src/wn.py``)
 
 ### Create the ISO 15926
-1. Run ``python -m src.15926`` twice (once for each of the Artefact URIs) and collect the results
+1. Run ``python -m src.15926`` twice (once for each of the Artefact URIs, copy paste the other URI in for the second run) and collect the results into one file
+
+* <http://data.1592.org/rdl/RDS201644>: Artefact Class (Note: This class is now marked as depreciated.)
+* <http://data.15926.org/rdl/RDS422594>: Artefact
+
 2. The list with Artefact CLASS must be curated according to the paper
 
 ### Create the list from word embeddings
