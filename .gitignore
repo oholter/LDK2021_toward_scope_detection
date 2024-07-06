@@ -2,3 +2,4 @@ venv/*
 data/*
 xml/*
 *.swp
+src/req_extract/target/*
