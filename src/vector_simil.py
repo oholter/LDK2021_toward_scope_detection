@@ -71,7 +71,7 @@ class VectorComparator:
 def write_most_similar(n):
     print(model.most_similar(positive=[equipment_wv], topn=n))
     most_simil = model.most_similar(positive=[equipment_wv], topn=n)
-    with open('/home/ole/src/scope_detection/terms_wv.txt', 'w') as F:
+    with open('data/terms_wv.txt', 'w') as F:
         F.write("Candidate\n")
         for word, score in most_simil:
             F.write(word)
@@ -204,9 +204,6 @@ if __name__ == "__main__":
                         level=logging.INFO)
     dim = 100
     model = api.load("glove-wiki-gigaword-100")
-    #print(model.most_similar(positive=['king'], topn=5))
-    #print(model.most_similar(positive=['equipment'], topn=5))
-    #print(model.most_similar(positive=['riser'], topn=5))
 
     comparator = VectorComparator.get_instance()
     print(comparator.get_equipment_similarity("pipeline"))
@@ -219,70 +216,4 @@ if __name__ == "__main__":
 
     #
     # A generative approach - This seems to actually improve performance of the method
-    # write_most_similar(n=100)
-    #
-
-    probably_equipments = []
-    probably_equipment_last = []
-    negative = []
-    negative_last = []
-
-    df = pd.read_csv("/home/ole/src/scope_detection/terms_from_termostat.txt", encoding='latin1', sep=',', header=0)
-
-    words = []
-    vectors = []
-
-    for i, row in df.iterrows():
-        terms = row['Candidate'].strip().split(" ")
-        vec, last_vec = get_term_vector(terms, model)
-        if last_vec is not None:
-            vectors.append(last_vec)
-            words.append(row['Candidate'])
-
-    #agglo = create_clusters(vectors)
-    #print_clusters(agglo, words, model)
-
-            #vec /= num_terms
-            simil = cosine(vec, equipment_wv)
-            simil_last = cosine(last_vec, equipment_wv)
-            #print("{} : equipments : sim {} : last vector {}".format(" ".join(terms), simil, simil_last))
-
-            if simil > 0.7:
-                probably_equipments.append(row['Candidate'])
-            if simil_last > 0.5:
-                probably_equipment_last.append(row['Candidate'])
-            #if simil < 0.5 or simil == np.nan:
-            #    negative.append(terms)
-            #if simil_last < 0.5 or simil_last == np.nan:
-            #    negative_last.append(terms)
-        #else:
-        #    print("no terms in :".format(line))
-
-
-    print("Probably equipemnts:")
-    for equipment in probably_equipments:
-        print(equipment)
-    print("Num terms: {}".format(len(probably_equipments)))
-
-    print()
-
-    print("Probably last:")
-    num_terms = 0
-    for equipment in probably_equipment_last:
-        #if not contains_verb(equipment) and not 'test' in equipment:
-        if len(equipment.split(" ")) == 1:
-            print(equipment)
-            num_terms += 1
-    print("Num terms: {}".format(num_terms))
-
-    #print()
-    #print("Negative:")
-    #for eq in negative:
-    #    print(" ".join(eq))
-
-    #print()
-    #print("Negative last:")
-    #for eq in negative_last:
-    #    print(" ".join(eq))
-
-    print()
+    write_most_similar(n=100)
