@@ -1,5 +1,7 @@
 # LDK2021_toward_scope_detection in textual requirements
-The tools used in the *toward scope detection in textual requirements* presented at LDK2021.
+The tools used in the
+[Toward Scope Detection in Textual Requirements](https://drops.dagstuhl.de/storage/01oasics/oasics-vol093-ldk2021/OASIcs.LDK.2021.31/OASIcs.LDK.2021.31.pdf)
+presented at LDK2021.
 
 To reproduce the experiments:
 
